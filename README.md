@@ -16,7 +16,7 @@ pip install -r requirements.txt
 # Start Inference Server
 ```
 .\venv\scripts\activate
-python main.py
+python app.py
 ```
 
 # Train a YoloV8 model using Roboflow dataset & save as ONNX model
