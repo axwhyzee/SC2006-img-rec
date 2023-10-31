@@ -1,4 +1,4 @@
-### Installation
+# Installation
 
 ```
 # create venv
@@ -13,7 +13,13 @@ pip install -r requirements-dev.txt
 pip install -r requirements.txt
 ```
 
-### Train a YoloV8 model using Roboflow dataset & save as ONNX model
+# Start Inference Server
+```
+.\venv\scripts\activate
+python main.py
+```
+
+# Train a YoloV8 model using Roboflow dataset & save as ONNX model
 
 **Configure settings.py and .env accordingly first**
 
@@ -22,6 +28,7 @@ python yolov8.py
 ```
 
 # Other utils
+To run these utils, setup an env with packages in requirements-dev.txt
 
 ### Download traffic camera images from API
 
@@ -38,5 +45,6 @@ python datagen.py
 ### Run inference
 
 ```
+# Update IMG_PATH in demo.py prior
 python demo.py
 ```
