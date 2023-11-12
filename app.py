@@ -69,12 +69,6 @@ def inference():
     try:
         img = imread_from_url(url)
         boxes, scores, class_ids = yolov8_detector(img)
-        return Response(response=json.dumps({
-            'error': None, 
-            'boxes': boxes.tolist(), 
-            'classes': class_ids.tolist(), 
-            'conf': scores.tolist()
-        }), status=200)
 
     except ConnectionError:
         logger.error('Invalid image URL')
@@ -83,6 +77,13 @@ def inference():
     except Exception as e:
         logger.error(str(e))
         return _error(str(e))
+    
+    return Response(response=json.dumps({
+            'error': None, 
+            'boxes': boxes.tolist(), 
+            'classes': class_ids.tolist(), 
+            'conf': scores.tolist()
+        }), status=200)
 
 
 if __name__ == '__main__':
